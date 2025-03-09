@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Registros Médicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Gestión de Registros Médicos</h1>
+
+    <h2>Registrar Paciente</h2>
+    <form id="formAgregarPaciente">
+        <input type="text" id="nombrePaciente" placeholder="Nombre del paciente" required>
+        <input type="number" id="edadPaciente" placeholder="Edad" required>
+        <!-- Aquí cambiaremos el input para permitir subir PDFs -->
+        <input type="file" id="historialPaciente" placeholder="Historial" accept=".pdf" required>
+        <input type="tel" id="contactoPaciente" placeholder="Número de contacto" required>
+        <button type="button" onclick="agregarPaciente()">Agregar Paciente</button>
+    </form>
+
+    <!-- Aquí va la lista de pacientes (no cambia) -->
+    <h2 id="listaPacientesTitle">Lista de Pacientes</h2>
+    <ul id="listaPacientes"></ul>
+
+    <h2>Registrar Consulta</h2>
+    <form id="formAgregarConsulta">
+        <input type="text" id="idPacienteConsulta" placeholder="ID del Paciente" required>
+        <input type="text" id="pacienteConsulta" placeholder="Nombre del paciente" required>
+        <input type="date" id="fechaConsulta" required>
+        <textarea id="diagnosticoConsulta" placeholder="Diagnóstico" required></textarea>
+        <input type="file" id="tratamientoConsulta" accept="application/pdf" required>
+        <input type="text" id="nombreDoctorConsulta" placeholder="Nombre del Doctor" required>
+        <button type="button" onclick="agregarConsulta()">Agregar Consulta</button>
+    </form>
+<!-- Aquí comienza la sección de consultas -->
+<h2 id="listaConsultasTitle">Lista de Consultas</h2>
+<ul id="listaConsultas"></ul>
+    <!-- Campo de búsqueda para pacientes -->
+    <h2>Buscar Paciente</h2>
+    <input type="text" id="buscarPaciente" placeholder="Buscar por nombre o ID">
+    <button type="button" onclick="buscarPaciente()">Buscar</button>
+
+    <!-- Campo de búsqueda para consultas -->
+    <h2>Buscar Consulta</h2>
+    <input type="text" id="buscarConsulta" placeholder="Buscar por ID paciente o médico">
+    <button type="button" onclick="buscarConsulta()">Buscar</button>
+
+    <div id="editarPacienteForm" style="display:none;">
+        <h3>Editar Paciente</h3>
+        <input type="text" id="editarNombre" placeholder="Nuevo nombre">
+        <input type="number" id="editarEdad" placeholder="Nueva edad">
+        <input type="text" id="editarHistorial" placeholder="Nuevo historial médico">
+        <input type="text" id="editarContacto" placeholder="Nuevo contacto">
+        <button type="button" onclick="guardarEdicionPaciente()">Guardar cambios</button>
+        <button type="button" onclick="cancelarEdicionPaciente()">Cancelar</button>
+    </div>
+
+    <div id="editarConsultaForm" style="display:none;">
+        <h3>Editar Consulta</h3>
+        <input type="date" id="editarFecha">
+        <input type="text" id="editarMedico" placeholder="Nuevo médico">
+        <input type="text" id="editarDiagnostico" placeholder="Nuevo diagnóstico">
+        <input type="text" id="editarTratamiento" placeholder="Nuevo tratamiento">
+        <button type="button" onclick="guardarEdicionConsulta()">Guardar cambios</button>
+        <button type="button" onclick="cancelarEdicionConsulta()">Cancelar</button>
+    </div>
+
+    <!-- Script al final -->
+    <script src="script.js"></script>
+
+</body>
+</html>

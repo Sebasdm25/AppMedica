@@ -1,0 +1,147 @@
+:root {
+    --primary-bg: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    --btn-bg: linear-gradient(45deg, #ff758c, #ff7eb3);
+    --edit-btn: #f8a6c1;
+    --delete-btn: #f25f72;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--primary-bg);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    overflow-y: auto; /* Habilitar scroll */
+}
+
+h1, h2 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+input, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+input {
+    background: #f3f3f3;
+}
+
+button {
+    background: var(--btn-bg);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 5px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Campos de búsqueda */
+#buscarPaciente, #buscarConsulta {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #f3f3f3;
+    margin: 10px auto;
+    text-align: left;
+}
+
+/* Botones de acción */
+button.edit-patient-button,
+button.edit-consult-button {
+    background: var(--edit-btn);
+    color: white;
+}
+
+button.delete-patient-button,
+button.delete-consult-button {
+    background: var(--delete-btn);
+    color: white;
+}
+
+button.edit-patient-button:hover,
+button.delete-patient-button:hover,
+button.edit-consult-button:hover,
+button.delete-consult-button:hover {
+    transform: scale(1.1);
+}
+
+/* Mejor alineación de los botones en cada item */
+ul li div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+h3 {
+    color: #fff;
+    text-align: left;
+    margin-left: 10%;
+}
+/* Estilo mejorado para el textarea del diagnóstico */
+textarea {
+    width: calc(100% - 20px); /* Que ocupe casi todo el ancho con márgenes */
+    height: 120px; /* Mayor altura para escribir cómodamente */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    resize: vertical; /* Permite ajustar altura */
+    background: #f3f3f3;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+/* Cambia el borde cuando el usuario hace clic en el textarea */
+textarea:focus {
+    border-color: #ff758c;
+    box-shadow: 0 0 8px rgba(255, 117, 140, 0.5);
+}
+
+/* Ajustar la alineación dentro del formulario */
+#diagnosticoConsulta {
+    display: block;
+    margin: 10px auto;
+}
